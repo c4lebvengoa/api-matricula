@@ -15,14 +15,14 @@ pipeline {
 
         stage('Build & Test (H2)') {
             steps {
-              
+
                 sh 'mvn clean test'
             }
         }
 
         stage('Package JAR') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                bat 'mvn clean package -DskipTests'
             }
         }
     }
