@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'jdk-21'
-        maven 'maven-3'
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -16,7 +11,7 @@ pipeline {
         stage('Build & Test (H2)') {
             steps {
 
-                sh 'mvn clean test'
+                bat 'mvn clean test'
             }
         }
 
