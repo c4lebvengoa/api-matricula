@@ -10,14 +10,13 @@ pipeline {
 
         stage('Build & Test (H2)') {
             steps {
-
-                bat 'mvn clean test'
+                sh 'mvn clean test'
             }
         }
 
         stage('Empaquetado JAR sin tests') {
             steps {
-                bat 'mvn clean package -DskipTests'
+                sh 'mvn clean package -DskipTests'
             }
         }
         stage('Generar Artefacto JAR'){
