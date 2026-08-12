@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    tools {
-      maven: 'Maven'
-    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -12,13 +10,13 @@ pipeline {
 
         stage('Build & Test (H2)') {
             steps {
-                sh 'mvn clean test'
+                sh './mvnw clean test'
             }
         }
 
         stage('Empaquetado JAR sin tests') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                sh './mvnw clean package -DskipTests'
             }
         }
         stage('Generar Artefacto JAR'){
