@@ -15,9 +15,14 @@ pipeline {
             }
         }
 
-        stage('Package JAR') {
+        stage('Empaquetado JAR sin tests') {
             steps {
                 bat 'mvn clean package -DskipTests'
+            }
+        }
+        stage('Generar Artefacto JAR'){
+            steps{
+               archiveArtifacts artifacts: 'target/*jar', fingerprint:true
             }
         }
     }
@@ -31,3 +36,4 @@ pipeline {
         }
     }
 }
+
