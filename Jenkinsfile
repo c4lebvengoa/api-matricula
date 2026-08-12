@@ -29,10 +29,10 @@ pipeline {
 
     post {
         success {
-            echo '¡Éxito! La API se compiló y paso las pruebas correctamente.'
+            echo '¡Éxito! La API se compiló y paso las pruebas correctamente'
         }
         failure {
-            echo 'Fallo: Hubo un error en la compilación o en las pruebas unitarias.'
+            echo 'Fallo: Hubo un error en la compilación o en las pruebas unitarias'
         }
     }
 }
